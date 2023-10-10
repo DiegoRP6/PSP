@@ -1,0 +1,30 @@
+PARA DEFINIR VARIABLES 
+
+nombre_variable = valor
+
+PARA PEDIR QUE SE DEFINA UNA VARIABLE AL EJECUTAR UN PROGRAMA
+
+nombre = input("Por favor, introduce tu nombre: ")
+
+PARA SACAR EL NUMERO DE CARACTERES 
+len(cadena)
+
+PARA HACER BUCLES
+
+for i in ...
+
+PARA INVERTIR UNA cadena
+
+print(cadena[::-1])
+
+PARA SACAR UN TRODO DE cadena
+
+cadena[desde : hasta]
+
+PARA CREAR UN MÉTODO
+
+def nombre_metodo(parametros que recibe):
+
+PARA MOSTRAR UNA CADENA AL REVES
+
+print(cadena[::-1])
