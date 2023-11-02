@@ -1,0 +1,96 @@
+
+TEMPLATE PARA CREAR MULTIPROCESOS 
+
+procesos = []    //aqui es donde se guardarán los procesos
+
+for i in range(num_procesos):
+        proceso = multiprocessing.Process(target=mi_funcion, args=(arg1, arg2, arg3))  # Reemplaza arg1, arg2, arg3 con tus argumentos
+        procesos.append(proceso)
+        proceso.start()
+
+    # Espera a que todos los procesos terminen
+    for proceso in procesos:
+        proceso.join()
+
+
+
+
+
+
+
+
+___________________________________________________________________________________________________
+
+                                    LO QUE ENTRA EN EL EXAMEN
+___________________________________________________________________________________________________
+
+0_process.py: 
+Este archivo podría contener código relacionado con el uso básico de multiprocessing para crear y gestionar 
+procesos en Python. Podría mostrar cómo crear procesos individuales y cómo ejecutar funciones en paralelo utilizando Process 
+de la biblioteca multiprocessing.
+
+1_syncProcesses.py: 
+Este archivo podría tratar sobre la sincronización de procesos en paralelo. 
+Podría incluir ejemplos de cómo los procesos pueden comunicarse entre sí o cómo se pueden utilizar mecanismos de 
+sincronización como semáforos o colas para coordinar el trabajo de los procesos en paralelo.
+
+2_pool.py: 
+Este archivo podría demostrar cómo utilizar multiprocessing.Pool, que es una forma conveniente de crear 
+un conjunto de procesos y distribuir tareas entre ellos de manera más eficiente. 
+Los objetos Pool simplifican la creación y administración de procesos en paralelo, lo que puede ser 
+útil para tareas como procesamiento por lotes.
+
+psutil:
+Es una biblioteca que proporciona una interfaz para interactuar con información del sistema operativo, como procesos, 
+CPU, memoria, red, etc.  (COMO EL OS DEL EJ1)
+
+
+psutil.process_iter():
+Es una función proporcionada por la biblioteca psutil en Python, que se utiliza para iterar a 
+través de los procesos en ejecución en el sistema. 
+
+proc.kill(): psutil proporciona la función proc.kill() para terminar o matar un proceso. 
+Puedes utilizar proc.kill() para finalizar un proceso específico mediante su PID.
+Ej: proceso = psutil.Process(pid)
+proceso.kill()
+
+proc.nice(): 
+En sistemas Unix-like, nice es un comando que se utiliza para ajustar la prioridad de un proceso. 
+Cuanto más bajo sea el valor de "nice", mayor será la prioridad del proceso. 
+Un proceso con un valor de "nice" negativo tendrá prioridad sobre otros procesos. 
+Un proceso con un valor de "nice" positivo tendrá menos prioridad. 
+En Python, podrías utilizar psutil para obtener información sobre la prioridad de un proceso 
+existente, pero no hay una función proc.nice() específica. Podrías ajustar la prioridad de un 
+proceso en Unix usando herramientas externas o comandos del sistema operativo.
+
+os.fork():
+Es una función que se utiliza en sistemas operativos basados en Unix y sistemas similares 
+para crear un nuevo proceso clonando el proceso actual. Esta llamada al sistema crea un nuevo 
+proceso hijo idéntico al proceso padre en el momento de la llamada a fork().
+A partir de ese punto, los dos procesos pueden ejecutar código de manera independiente.
+
+p.start(): 
+Este método se utiliza para iniciar la ejecución de un proceso. 
+Cuando se llama a p.start(), se crea un nuevo proceso en el sistema y se inicia la ejecución 
+de la función objetivo (target) asociada con ese proceso. El proceso se ejecuta en paralelo 
+con el proceso principal que llamó a p.start().
+
+p.join(): 
+Este método se utiliza para esperar a que un proceso termine su ejecución antes de que el 
+programa principal continúe. Cuando se llama a p.join(), el programa principal se bloquea 
+y espera a que el proceso p termine su ejecución. Una vez que el proceso haya terminado, 
+el programa principal reanuda su ejecución.
+
+lock.acquire(): 
+Cuando se llama a lock.acquire(), se trata de adquirir (bloquear) el bloqueo. 
+Si el bloqueo ya está adquirido por otro hilo o proceso, el hilo o proceso que llama a 
+lock.acquire() se bloqueará y esperará hasta que el bloqueo esté disponible. 
+Una vez que se adquiere el bloqueo, el hilo o proceso actual tiene acceso exclusivo a la 
+sección crítica del código que está protegida por el bloqueo.
+
+lock.release(): 
+lock.release() se utiliza para liberar (desbloquear) el bloqueo. 
+Una vez que se ha terminado de usar un recurso compartido dentro de la sección crítica 
+protegida por el bloqueo, se debe liberar el bloqueo llamando a lock.release(). 
+Esto permite que otros hilos o procesos que estaban esperando adquirir el bloqueo puedan 
+hacerlo y acceder a la sección crítica.
