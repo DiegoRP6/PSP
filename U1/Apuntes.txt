@@ -94,3 +94,16 @@ Una vez que se ha terminado de usar un recurso compartido dentro de la sección 
 protegida por el bloqueo, se debe liberar el bloqueo llamando a lock.release(). 
 Esto permite que otros hilos o procesos que estaban esperando adquirir el bloqueo puedan 
 hacerlo y acceder a la sección crítica.
+
+
+
+
+
+EN EL EXAMEN
+
+Pondra para usar lock.acquire.lock y el lock.acquire.release
+    Todos los hilos deben compartir el mismo lock
+
+    --
+
+    

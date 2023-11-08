@@ -1,0 +1,23 @@
+TEMPLATE MULTITHREAD 
+____________________________
+import threading
+
+def funcion_del_hilo(argumentos):
+    # Coloca aquí el código que será ejecutado en el hilo
+    pass
+
+if __name__ == "__main":
+    # Crear hilos
+    hilo1 = threading.Thread(target=funcion_del_hilo, args=(argumentos1,))
+    hilo2 = threading.Thread(target=funcion_del_hilo, args=(argumentos2,))
+
+    # Iniciar los hilos
+    hilo1.start()
+    hilo2.start()
+
+    # Esperar a que los hilos terminen (opcional)
+    hilo1.join()
+    hilo2.join()
+
+    # Resto del código del programa principal
+__________________________________________________________
