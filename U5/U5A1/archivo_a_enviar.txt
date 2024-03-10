@@ -1,0 +1,2 @@
+Transmita un fichero encriptado a través de sockets entre dos nodos (ordenadores) de la red. En A tenemos un fichero con la clave publica de B y en B tenemos su propia clave privada
+Para generar las claves puedes usar openSSL
